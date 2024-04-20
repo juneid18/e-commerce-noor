@@ -1,8 +1,8 @@
 'use client'
-import React, { useState } from 'react';
-import './page.module.css';
+import React, { useEffect, useState } from 'react';
+import './style.css';
 import axios from 'axios';
-import Router, { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 const Page = () => {
@@ -14,7 +14,6 @@ const Page = () => {
     message: "",
   });
 
-  const inputs = document.querySelectorAll(".input");
 
   function focusFunc() {
     let parent = this.parentNode;
@@ -27,11 +26,15 @@ const Page = () => {
       parent.classList.remove("focus");
     }
   }
+  useEffect(() => {
+    const inputs = document.querySelectorAll(".input");
+    inputs.forEach((input) => {
+      input.addEventListener("focus", focusFunc);
+      input.addEventListener("blur", blurFunc);
+    });
+  }, [])
   
-  inputs.forEach((input) => {
-    input.addEventListener("focus", focusFunc);
-    input.addEventListener("blur", blurFunc);
-  });
+
   
 
   const ContactUsHandle = async (e) => {

@@ -1,7 +1,5 @@
 "use client";
 import "../style.css";
-import { faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
@@ -9,9 +7,11 @@ import axios from "axios";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
+import { FaShoppingCart , FaUser } from "react-icons/fa";
 
 export default function Home() {
   const router = useRouter();
+
   const [clientdata, setclientdata] = useState();
   const [status, setstatus] = useState("false");
   useEffect(() => {
@@ -45,27 +45,26 @@ export default function Home() {
     document.querySelector(".account-con").style.left = "100%";
   }
 
-  const filterButtons = document.querySelectorAll('.category button');
-  const items = document.querySelectorAll('#card');
-
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const category = button.getAttribute('data-category');
+  useEffect(() => {
+    const filterButtons = document.querySelectorAll('.category button');
+    const items = document.querySelectorAll('#card');
   
-        items.forEach(item => {
-            const itemCategory = item.getAttribute('data-category');
-            if (category === 'All' || itemCategory === category) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          const category = button.getAttribute('data-category');
+    
+          items.forEach(item => {
+              const itemCategory = item.getAttribute('data-category');
+              if (category === 'All' || itemCategory === category) {
+                  item.style.display = 'block';
+              } else {
+                  item.style.display = 'none';
+              }
+          });
+      });
     });
-  });
+  }, [])
   
-
-
-
   // LogoutHAndle
   function LogoutHandle() {
     Cookies.remove("userlogged");
@@ -96,7 +95,7 @@ const inputscroll = () => {
   );
   return (
     <>
-        <Head>
+      <Head>
         <title>NOOR</title>
       </Head>
       <nav>
@@ -121,25 +120,15 @@ const inputscroll = () => {
             />
         </div>
         <Link href="./Cart">
-          <FontAwesomeIcon
-            icon={faShoppingCart}
-            style={{
+          <FaShoppingCart style={{
               fontSize: "30px",
               margin: "16px",
               color: "black",
               cursor: "pointer",
-            }}
-          />
+            }}/>
         </Link>
-        <FontAwesomeIcon
-          icon={faUser}
-          onClick={profile_open}
-          style={{
-            fontSize: "30px",
-            marginRight: "18px",
-            cursor: "pointer",
-          }}
-        />
+
+        <FaUser className="usre" onClick={profile_open}/>
       </nav>
       <div className="nav_con">
         <span onClick={shownav}>&times;</span>
@@ -156,7 +145,7 @@ const inputscroll = () => {
           <source src="./images/NOOR.mp4" type="video/mp4" />
         </video>
 
-        <Image src="/images/model.png" alt="Logo" width={400} height={600} />
+        <Image src="/images/model.png" alt="Logo" width={400} height={600} priority={true} />
         <br /><br /><br /><br />
         <button id="click-btn">Click Here</button>
  
@@ -357,8 +346,9 @@ const inputscroll = () => {
           <Image
             src="/images/output-onlinegiftools.gif"
             alt="Account"
-            width={140}
+            width={100}
             height={100}
+            unoptimized={true} 
           />
         </div>
         <div className="profile-category">

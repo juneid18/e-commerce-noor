@@ -10,6 +10,13 @@ const Page = () => {
     email: "",
     message: "",
   });
+  useEffect(() => {
+    if (typeof location !== "undefined") {
+      // Your code that accesses location here
+      // For example:
+      console.log("Current URL:", location.href);
+    }
+  }, []);
 
   const FeedbackHandle = async (e) => {
     e.preventDefault();

@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Page = () => {
   const [feedback, setfeedback] = useState([]);
-  function toggleNav() {
+  const toggleNav = () => {
     const nav = document.querySelector(".navcontainer");
     const currentWidth = nav.style.width;
     nav.style.width = currentWidth === "80px" ? "250px" : "80px";
@@ -25,9 +25,7 @@ const Page = () => {
 
   useEffect(() => {
     fetchUserData();
-    console.log(feedback);
   }, []);
-  console.log(feedback);
 
   return (
     <>
