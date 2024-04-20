@@ -458,7 +458,7 @@ const inputscroll = () => {
             height: "84%",
           }}
         >
-          <Image width={10000} height={500} alt="footer" src="/images/footerimg.png" style={{position:'relative', top:'100%', zIndex:'-1'}} />
+          {/* <Image width={500} height={500} alt="footer" src="/images/footerimg.png" style={{width: '100%',position:'relative', top:'100%', zIndex:'-1'}} /> */}
           <h2 style={{ margin: "16px", fontSize: "2.5rem" }}>Subscribe</h2>
           <form action="https://formspree.io/f/xgebndgy" method="post">
             <input
