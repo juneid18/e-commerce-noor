@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,300;1,100;1,200;1,300&family=Inter:wght@100;200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
+}
+.main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 80%;
+    height: 90vh;
+    background: #f5f5f5;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 12px;
+}
+.signin-container{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.register-container{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center; 
+}
+select{
+    width: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+form{
+   width: 100%;
+   height: 50%; 
+   text-align: center;
+}
+form h1{
+   margin-bottom: 3.25rem;
+   font-weight:900;
+   font-family: Arial, Helvetica, sans-serif;
+}
+form input{
+    width: 18rem;
+    padding: 10px;
+    margin: 6px;
+    background-color: #FFFFF7;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 0.90rem;
+}
+#submit-btn1{
+    width: 140px;
+    margin-top: 40px;
+    background-color: #121212;
+    color: #fff;
+    padding: 12px;
+    border: 1px double #000;
+    font-weight: 400;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#submit-btn1:hover{
+    background-color: #ffffff;
+    color: #121212;
+    border: 1px double #000;
+    font-weight: 400;
+}
+#submit-btn{
+    width: 140px;
+    margin-top: 40px;
+    background-color: #121212;
+    color: #fff;
+    padding: 12px;
+    border: 1px double #000;
+    font-weight: 400;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#submit-btn:hover{
+    background-color: #ffffff;
+    color: #121212;
+    border: 1px double #000;
+    font-weight: 400;
+}
+form a{
+    color: #000;
+    text-decoration: none;
+}
+.slide-container{
+    width: 40%;
+    height: 90%;
+    background: #272727;
+    color: #fff;
+    position: absolute;
+    border-radius: 12px;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in;
+}
+#signup-btn{
+    width: 120px;
+    display: block;
+    margin: auto;
+    margin-top: 24px;
+    padding: 10px;
+    border: 1px solid #fff;
+    background: #fff;
+    font-weight: 900;
+    cursor: pointer;
+    border-radius: 18px;
+}
+.slider-decs{
+    display: block;
+    text-align: center;
+    padding: 4rem;
+    transition: 0.2s ease-out;
+}
+.slider-decs-hide{
+    display: none;
+    text-align: center;
+    padding: 4rem;
+    transition: 0.2s ease-out;
+}
+.slider-toggle{
+    left: 10%;
+}
